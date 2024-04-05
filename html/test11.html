@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>form태그 연습</title>
+</head>
+<body>
+  <h2>회원가입<h2>
+  <form name="" method="" action="">
+    <p>성명: <input type="text" name="name" id="name"maxlength="10"size="10"/></p>
+    <p>나이: <input type="number" name="age" id="age"min="1"max="99"/></p>
+    <p>닉네임: <input type="text" name="nickname"id="nicname"size="10"/></p>
+    <p>비밀번호: <input type="password" name="pwd" id="pwd" maxlength="15"/></p>
+    <p>검색어: <input type="search" name="search" id="search"/></p>
+    <p>이메일: <input type="email" name="email" id="email"/></p>
+    <p>전화번호: <input type="Tel" name="Tel" id="Tel"/></p>
+    <p>성별:
+     <input type="radio" name="gender" id = "gender1"/>남자
+     <input type="radio" name="gender" id = "gender2" checked/>여자
+    <p>
+      카드:
+      <input type ="checkbox" name="card" id ="card1"/>삼성
+      <input type ="checkbox" name="card" id ="card2"/>LG
+      <input type ="checkbox" name="card" id ="card3"/>농협
+      <input type ="checkbox" name="card" id ="card4"/>신한
+      <input type ="checkbox" name="card" id ="card5"/>우리
+      <input type ="checkbox" name="card" id ="card6"/>기업
+    </p> 
+    <p>
+      직업:
+      <select name="job" id ="job">
+        <option>선택</option>
+        <option>주부</option>
+        <option>회사원</option>
+        <option>연구원</option>
+        <option>목수</option>
+      </select>
+    </p>
+    <p>
+      좋아하는 음식:
+      <select name="food" id ="food" size="5" multiple>
+        <option>선택</option>
+        <option>돈까스</option>
+        <option>김밥</option>
+        <option>비빔밥</option>
+        <option>스테이크</option>
+        <option>푸아그라</option>
+        <option>닭갈비</option>
+        <option>바나나우유</option>
+        <option>치킨</option>
+        <option>탕수육</option>
+        <option>팔보채</option>
+      </select>
+    </p>
+    <p>
+    자기소개: <textarea rows="5" cols="50"name="content"id="content"></textarea>
+    </p>
+    <p>
+      첨부파일: <input type="file" name="file" id="file"/>
