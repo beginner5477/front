@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test16</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        body {
+            margin: 0px auto;
+        }
+        .container {
+            /* width: 100%; */
+            width: 700px;
+            position: absolute;
+            left: 200px;
+            border: 1px solid grey;
+            padding: 20px;
+            margin: 20px;
+            background-color: red;
+            border-style: double;
+            border-width: 10px;
+        }
+        input[type="text"], input[type="password"],input[type="number"],select,button {
+            width:100%;
+            margin: 20px 0px;
+            padding: 10px 0px;
+            font-size: 1em;
+
+        }
+        input[type="text"]:hover, input[type="password"]:hover,input[type="number"]:hover,select:hover,button:hover  {
+            background-color: grey;
+        }
+        button {
+            background-color: #d0a;
+            border-radius: 10px;
+        }
+        input[type="radio"] {
+            margin:15px 5px 10px 10px;
+        }
+    </style>
+</head>
+<body>
+<p><br/></p>
+    <div class="container">
+        <h2>Form Tag와 css</h2>
+        <form>
+                <label for="mid" class="title">아이디</label>
+                <input type="text" name="mid" id="mid" size="20" placeholder="아이디를 입력하쇼잉~" required autofocus/>
+                <label for="pwd"class="title">비밀번호</label>
+                <input type="password" name="pwd" id="pwd" size="20" placeholder="비밀번호를 입력하쇼잉~"required/>
+                <label for="age"class="title">나이</label>
+                <input type="number" name="age" id="age" size="20" value="20" placeholder="나이를 입력하쇼잉~" min="20"/>
+                <label for="gender"class="title">성별</label>
+                <input type="radio" name="gender" id="gender" value="남자" checked/>남자
+                <input type="radio" name="gender" id="gender"value="여자"/>여자<br/>
+                <label for="address"class="title">주소</label>
+                <input type="text" name="address" id="address" size="20" placeholder="주소를 입력하쇼잉~"/>
+                <label for="sosok"class="title">소속</label>
+                <select name="sosok">
+                    <option value="">부서선택</option>
+                    <option>인사과</option>
+                    <option>총무과</option>
+                    <option>자재과</option>
+                    <option>영업과</option>
+                </select>
+                <button  type="submit">회원가입</button> 
+                <button  type="reset">다시입력</button> 
+                <button  type="button">돌아가기</button>
+        </form>
+    </div>
+<p><br/></p>
+</body>
+</html>

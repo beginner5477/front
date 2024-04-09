@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test6</title>
+    <style type="text/css" rel="stylesheet">
+        p {
+            font-size: 20pt;
+            color: rgba(0, 255, 255, 1.0);
+        }
+        .atom {color: green;}
+        #mbc {color: yellow;}
+        .marvel {background-color: bisque;}
+    </style> 
+    <!-- <link type="text/css" rel="stylesheet" href="test2.css"> -->
+
+</head>
+<body bgcolor="#888">
+    <h2>복합처리시에 우선순위 처리(External Style)</h2>
+    <p>1.<span class="marvel">안녕하세요</span></p>
+    <p>2.<span class="atom">안녕</span>하세요</p>
+        2-1.반갑습니다.<br/>
+    <p>3.안녕하세요</p>
+        3-1.<span class="atom">반갑</span>습니다.<br/>
+    <p>4.안녕하세요</p>
+        <div id ="mbc">4-1.반갑습니다.</div>
+    <p>5.안녕하세요</p>
+        5-1.반갑습니다.<br/>
+    <p>6.안녕하세요</p>
+        <div id="mbc">6-1.반갑습니다.</div>
+    <p>7.안녕하세요</p>
+        7-1.반갑습니다.<br/>
+    <p>8.안녕하세요</p>
+        <div id="mbc">8-1.반갑습니다.</div>
+</body>
+</html>
