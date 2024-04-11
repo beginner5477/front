@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test8</title>
+    <script>
+        'use strict'
+        let su1 = 100;
+        console.log(su1);
+        {
+            console.log(su1);
+            let su2 = 200;
+            console.log(su2);
+            su1 += su2; //자바 스크립트도 자바마냥 전치연산 후치연산 우선순위 달라짐 알제?
+        }
+        console.log(su1);
+        
+    </script>
+</head>
+<body>
+    <h2>본문이용</h2>
+</body>
+</html>

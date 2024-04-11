@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test4</title>
+    <script>
+        document.write("안녕~~");
+        atom1();
+        function atom1() {
+            document.write("안녕222222");
+            return 1;
+        }
+        atom1();
+        
+    </script>
+</head>
+<body>
+    <p>이곳은 본문입니다.</p>
+
+    <input type="button" value="atom1" onclick="atom1()"/>
+    <!-- <input type="button" value="atom2" onclick="atom2()"/> -->
+    <button type="button" onclick="atom2()">atom2호출</button>
+    <button type="button" onclick="atom3()">atom3호출</button>
+    <script>
+        function atom2() {
+            alert("안녕333");   //얼러트 쓰면 창 안바꾸고 좋음
+            return 1;
+        }
+        function atom3() {
+            atom1();
+            atom2();
+            alert("작업종료");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        'use strict';
+        let v = prompt("아무 변수나 하나 입력해주세용");
+        console.log(typeof(v));
+        v += 100;
+        alert(v+100);
+        function msg() {
+            alert("메세지 출력슨~");
+        }
+        function msg2(su) {
+            alert("메세지2 출력슨~ "+ su);
+        }
+        function msg3() {
+            let su = prompt("수를 입력하세요:");
+            alert(su);
+        }
+        function msg4() {
+            let ans = confirm("작업을 계속하시겠습니까?");
+            // alert(su);
+            if(ans) {
+                alert("작업 계속 진행");
+            }
+            else alert("작업 중지합니다.");
+        }
+    </script>
+</head>
+<body>
+    <h4>본문</h4>
+    <p>
+        <input type="button" value="메세지1" onclick="msg()"/>
+        <input type="button" value="메세지2" onclick="msg2(121)"/>
+    </p>
+    <p>
+        <input type="button" value="메세지 출력후 값 입력받기" onclick="msg3()"/>
+        <input type="button" value="컨펌 메세지 여부에 따라 작업하기" onclick="msg4()"/>
+    </p>
+</body>
+</html>
