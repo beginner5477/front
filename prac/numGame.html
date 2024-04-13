@@ -10,21 +10,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function Game() {
-        let cnt = 5;
+        let cnt = 4;
         let ans;
         let target = parseInt(Math.random()*100) + 1;
-        console.log(typeof(target));
+        console.log(target);
         while(true)
         {
-            if(cnt==5)
+            if(cnt==4)
             {
                 ans = parseInt(prompt("1~100사이의 숫자를 입력하세요:"));
             } 
-            if(cnt==1)
-            {
-                alert("게임 실패 정답은 "+target+" 입니다");
-                return 0;
-            }
             if(ans == target)
             {
                 alert("맞았습니다. 정답은:"+target+"  입니다.");
@@ -38,8 +33,13 @@
             {
                 alert("틀렸습니다 입력:"+ans+" 보다 더 작습니다.");
             }
-            cnt--;
+            if(cnt==0)
+            {
+                alert("게임 실패 정답은 "+target+" 입니다");
+                return 0;
+            }
             ans = parseInt(prompt("1~100사이 숫자 입력해주세요 남은 기회:"+cnt+"입니다."));
+            cnt--;
         }
     }
     function backgo() {

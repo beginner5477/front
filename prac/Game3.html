@@ -17,25 +17,41 @@
             <div>입력: <input id="userNum" type="number" required autofocus min="1" max="3"/></div>
             <div><input type="button" value="게임시작" onclick="game3(document.getElementById('userNum').value)"/></div>
         </div>
-        <div id="demo"></div>
+        <div id="demo" style="text-align: center;"></div>
+        <div style="text-align: center;">
+            <input type="button" value="메뉴로 가기" onclick="backgo()"/>
+        </div>
     </div>
 </body>
 <script>
+    let cnt = 0;
     function game3(userNum) {
+        cnt++;
         let jud = parseInt((Math.random()*3)) + 1;
-        
+        let judLang, userLang;
+        if(jud == 3) judLang = "보";
+        else if(jud == 2) judLang = "바위";
+        else if(jud == 1) judLang = "가위";
+
+        if(userNum == 3) userLang = "보";
+        else if(userNum == 2) userLang = "바위";
+        else if(userNum == 1) userLang = "가위";
+
         if(userNum - jud == 0)
         {
-
+            document.getElementById("demo").innerText = `${cnt}.비겼습니다.\n유저 선택:${userLang}\n컴퓨터선택:${judLang}`;
         }
         else if(userNum - jud == 1 || userNum - jud == -2)
         {
-            document.getElementById("demo").innerText = ``
+            document.getElementById("demo").innerText = `${cnt}.이겼습니다.\n유저 선택:${userLang}\n컴퓨터선택:${judLang}`;
         }
         else if(userNum - jud == -1 || userNum - jud == 2)
         {
-
+            document.getElementById("demo").innerText = `${cnt}.졌습니다.\n유저 선택:${userLang}\n컴퓨터선택:${judLang}`;
         }
     }
+    function backgo() {
+        location.href = "memberMain.html";
+        }
 </script>
 </html>

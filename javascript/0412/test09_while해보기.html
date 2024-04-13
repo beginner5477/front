@@ -10,19 +10,36 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     'use strict';
-
-    function forCheck() {
-      let su = document.getElementById("su").value;
-      let str = "";
-
-      for(let i=1; i<=su; i++) {
-        str += `번호 ${i}. 안녕~~<br/>`;
+    function whileCheck() {
+      let sum = 0;
+      let strt = 1;
+      let cnt = 0;
+      let res = "";
+      while(strt <= document.getElementById("su").value)
+      {
+        cnt++;
+        sum += strt;
+        strt++;
+        if(cnt % 10 == 0)
+        {
+          res += `${cnt}항까지의 합은 ${sum}입니다.\n`;
+          document.getElementById("demo").innerText = res;
+        }
+        if(strt-1 == document.getElementById("su").value)
+        {
+          res += `1항부터 마지막까지의 합은 ${sum}입니다.\n`;
+          document.getElementById("demo").innerText = res;
+        }
       }
-      demo.innerHTML = str;
     }
-
-
   </script>
+  <style>
+    #demo {
+      color: rgb(149, 119, 239);
+      background-color: #caf758;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 <p><br/></p>
