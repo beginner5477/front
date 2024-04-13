@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하이용가리~~</title>
+    <script>
+        'use strict';
+        calc();
+        // mbc();
+        //일반함수: Named Fuc
+        function calc(su1,su2) {
+            console.log(su1 + su2);
+        }
+        //익명함수: 어나니머스 함수는 호이스팅이 안된다잉~ 그래서 절차진행 따라 줘야댐 주의하세용~!!!
+        // 근데 생각해보면 당연한게 호이스팅 되는 부분은 함수 대가리 선언부인데 =으로 구분되어있으니 
+        // 당연히 mbc 변수선언된거는 못찾는게 맞다고 개인적으로 생각함
+        let mbc = function () {
+            let str = "익명함수 연습~";
+            console.log(str);
+        }
+
+        console.log("1.mbc(): ",mbc());
+        console.log("2.mbc: ",mbc);
+        console.log("3.mbc.str: ",mbc.str);
+        console.log("\n");
+
+        let add = function(su1,su2) {
+            console.log(`${su1} ${su2}`);
+            return su1+su2;
+        }
+        console.log(`5.add(): ${add(90,550)}`);
+    </script>
+</head>
+<body>
+    <h2>익명함수(anonymous Function)</h2>
+    <p><input type="button" value="일반함수" onclick="calc(50,100)"/></p>
+    <p><input type="button" value="익명함수" onclick="mbc()"/></p>
+</body>
+</html>

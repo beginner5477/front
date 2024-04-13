@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let n1="", n2="", log="";
+        let res = "";
+        function calc() {
+            switch(n2)
+            {
+                case "+":
+                    res = parseFloat(res.substring(0,res.indexOf("+"))) + parseFloat(res.substring(res.indexOf("+")+1,res.length));
+                    output();
+                    break;
+                case "-":
+                    let jud = res.substring(res.lastIndexOf("-")-1,res.lastIndexOf("-"));
+                    if(jud == "+") 
+                    res = parseFloat(res.substring(0,res.lastIndexOf("-")-1)) - parseFloat(res.substring(res.lastIndexOf("-")+1,res.length));
+                    else if(jud == "*")
+                    res = parseFloat(res.substring(0,res.lastIndexOf("-")-1)) * parseFloat(res.substring(res.lastIndexOf("-"),res.length));
+                    else if(jud == "/")
+                    res = parseFloat(res.substring(0,res.lastIndexOf("-")-1)) / parseFloat(res.substring(res.lastIndexOf("-"),res.length));
+                    else 
+                    res = parseFloat(res.substring(0,res.lastIndexOf("-"))) - parseFloat(res.substring(res.lastIndexOf("-")+1,res.length));
+                    output();
+                    break;
+                case "*":
+                    res = parseFloat(res.substring(0,res.indexOf("*"))) * parseFloat(res.substring(res.indexOf("*")+1,res.length));
+                    output();
+                    break;
+                case "/":
+                    res = parseFloat(res.substring(0,res.indexOf("/"))) / parseFloat(res.substring(res.indexOf("/")+1,res.length));
+                    output();
+                    break;
+            }
+            res = res + "";
+            log += res + "\n";
+            document.getElementById("log").value = log;
+            n2 = "";
+        }
+        function su1(n) {
+            n1 += n;
+            console.log(n1);
+            res += n1;
+            output();
+            n1 = "";
+        }
+        function oper(op) {
+            if(op == "-")
+            {
+                if(res.substring(res.length-1) == "-") return 0;
+            }
+            else if(res.substring(res.length-1) == "+"||res.substring(res.length-1) == "-"||res.substring(res.length-1) == "*"||res.substring(res.length-1) == "/")
+            return 0;
+            n2 = op;
+            res += n2;
+            output();
+            console.log(n2);
+            n1 = "";
+        }
+        function BS() {
+            res = res.substring(0,res.length-1)
+            console.log(res);
+            output();
+        }
+        function output() {
+            document.getElementById("result").innerText = res;
+        }
+        function AC() {
+            res = "";
+            output();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <table class="table-success">
+            <tr>
+                <td rowspan="2" colspan="3" style="width: 200px;background-color: gray;"><div id="result"></div></td>
+                <td><input style="width: 50px;" type="button" id="bs" value="BS" onclick="BS()" /></td>
+                <td rowspan="6"><input style="width: 50px; height: 200px;" type="button" id="bs" value="AC" onclick="AC()" /></td>
+            </tr>
+            <tr>
+                <td><input style="width: 50px;" type="button" id="divide" value="/"onclick="oper(value)"/></td>
+            </tr>
+            <tr>
+                <td><input style="width: 50px;" type="button" id="7" value="7"onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="8" value="8"onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="9" value="9"onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="multiply" value="*"onclick="oper(value)"/></td>
+            </tr>
+            <tr>
+                <td><input style="width: 50px;" type="button" id="4" value="4"onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="5" value="5"onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="6" value="6"onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="sub" value="-"onclick="oper(value)"/></td>
+            </tr>
+            <tr>
+                <td><input style="width: 50px;" type="button" id="1" value="1"onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="2" value="2"onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="3" value="3"onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="add" value="+"onclick="oper(value)"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input style="width: 125px;" type="button" id="0" value="0"onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="dot" value="."onclick="su1(value)" /></td>
+                <td><input style="width: 50px;" type="button" id="equal" value="="onclick="calc()" /></td>
+            </tr>
+        </table>
+        <textarea rows="20" cols="20" id="log"></textarea>
+    </div>
+</body>
+</html>

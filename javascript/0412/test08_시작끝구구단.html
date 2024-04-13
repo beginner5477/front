@@ -1,0 +1,36 @@
+<!-- 구구단 만들어보세용 출력할 단수를 받아서  ㅇㅋ? -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kukudan</title>
+    <script>
+        function kuku(n1, n2) {
+            n1 = parseInt(n1);
+            n2 = parseInt(n2);
+            let res = "";
+            // for(let i = 1; i <= 9; i++)
+            // {
+            //     res += `${n1} * ${i} = ${n1*i}\n`; 
+            // }
+            for(let i = n1; i <= n2; i++)
+            {
+                for(let j = 1; j <= 9; j++)
+                {
+                    res += `${i} * ${j} = ${i*j}\n`;
+                }
+                res += "\n";
+            }
+            document.getElementById("demo").innerText = res;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        시작할 구구단을 입력하세용: <input type="number" id="n1"/><br/>
+        끝의 구구단을 입력하세용: <input type="number" id="n2"/><br/>
+        <input type="button" id="oper" value="출력" onclick="kuku(document.getElementById('n1').value, document.getElementById('n2').value)"/></div>
+    <div id="demo"></div>
+</body>
+</html>

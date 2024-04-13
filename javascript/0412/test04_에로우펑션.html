@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        'use strict';
+        //실행블록 안의 내용이 한줄이면 위로 올리기 가능~
+        //한줄일때는 return 마저 생략함 ㄷㄷ슨
+        let mbc1 = (su1,su2) => {
+            console.log("이곳은 에로우 펑션1 내부입니다~");
+            return su1 + su2;
+        }
+        let mbc2 = (su1,su2) => "에로우펑션2 리턴값";
+        mbc1();
+        console.log(mbc2());
+        let res = mbc2();
+        console.log(res);
+
+        const mbc3 = (su1,su2) => {
+            res = su1 + su2;
+            return res;
+        }
+
+    </script>
+</head>
+<body>
+    <h7>에로우 펑션 연습</h7>
+    <p><input type="button" value="mbc1에로우메소드실행" onclick="mbc1()"/></p>
+    <p><input type="button" value="mbc3에로우메소드실행" onclick="alert(mbc3(222,333))"/></p>
+</body>
+</html>
