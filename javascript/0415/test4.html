@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test4객체연습</title>
+    <script>
+        'use strict';
+        // const obj1 = new Object();
+        const obj2 = {name:"김도완",age:30,job:"학생"};
+        console.log(obj2);
+        obj2.gender = true; //성별을 남자는 트루 여자는 false로 해보자
+        console.log(obj2);
+        
+        delete obj2.gender;
+        console.log(obj2);
+
+        //값의 처리
+        console.log(obj2.name);
+        console.log(obj2["age"]);
+        console.log(obj2["job"]);
+        console.log(obj2.job);
+
+        const obj3 = {name:"미카엘",age:3331,job:"대천사"};
+        const obj4 = {name:"벨제붑",age:3333,job:"대악마"};
+        const obj5 = {name:"저거너트",age:67,job:"몸빵맨"};
+        const obj6 = {name:"메피스토",age:54,job:"지옥주인",hi: function test() {alert("테스트용가리");}};
+        console.log(obj6.hi());
+        function makeObject(name,age,job) {
+            return {
+                name:name,
+                age:age,
+                job:job
+                // name,
+                // age,
+                // job
+            };
+        }
+        const obja = makeObject("가브리엘",3131,"대천사");
+        console.log(obja);
+
+        //키를 뽑아보자잉~ in으로다가 향상된 for문일때
+        for(let key in obja)
+        {
+            console.log(key);
+        }
+        //값을 뽑아보자. 향상된 for문일때
+        for(let key in obja)
+        {
+            console.log(obja[key]);
+        }
+        
+        //객체 복사(얕은 복사)
+        console.log("6",obj6);
+        let obj7 = obj6;
+        console.log("7",obj7);
+        // delete obj7.name;
+        // console.log(obj7);
+        //객체 복사(깊은 복사)
+        const obj8 = new Object();
+        // obj8.abc = 999;
+        // obj8["abc"] = 999;
+        alert(obj8.abc);
+        for(let key in obj6)
+        {
+            obj8[key] = obj6[key];
+        }
+        console.log(obj8);
+        console.log(obj6);
+
+        obj8.name = "사람사람";
+        console.log(obj6);
+        console.log(obj8);
+
+        //객체 복사 assign 깊은 복사 명령어
+        const obj9 = new Object();
+        Object.assign(obj9,obj6);
+        console.log("2",obj9);
+        delete obj9.name;
+        console.log("3",obj9);
+        console.log("4",obj6);
+        obj9.hi();
+    </script>
+</head>
+<body>
+    <h3>객체연습</h3>
+</body>
+</html>

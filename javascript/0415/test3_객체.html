@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test3객체연습2</title>
+    <script>
+        'use strict';
+        let name = '김도완';
+        let age = 30;
+        let job = "학생";
+
+        name = '하이용';
+        age = 3033;
+        job = "신선";
+
+
+        function personPrint(obj1) {
+            console.log(obj1.name);
+            console.log(obj1.age);
+            console.log(obj1.job);
+        }
+        //Object(객체로 받으면 한방에 변수 다 넘겨 받을 수 있다~~)
+        let obj1 = {name:'홍길동', age:25, job:"학생"};
+        let obj2 = {name:'미카엘', age:9999, job:"대천사"};
+
+        personPrint2(obj1);
+        personPrint2(obj2);
+
+        function personPrint2(member) {
+            console.log(member.name);
+            console.log(member.age);
+            console.log(member.job);
+        }
+    </script>
+</head>
+<body>
+    <h3>객체연습</h3>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object(객체)</title>
+    <script>
+        'use strict';
+
+        //객체 생성(객체:{키(key),값(value)}으로 구성됨)
+        let obj1 = {};
+        let obj2 = new Object();
+        obj2.name = "홍길동"; //obj1 = {name:"홍길동"}
+        obj2.age = 25;
+        obj2.jumsu = [100,90,99];
+        obj2.myFunc = function() {
+            console.log("성명: ",this.name);
+            alert("dgikdkg111111");
+        };
+        obj2.myObj = {
+            tel: "010-4444-4444",
+            address: "청주시 서원구 성화동 하이하이"
+        }
+        console.log(obj2);
+        console.log("");
+        console.log(obj2.myFunc());
+        // obj2.myFunc();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

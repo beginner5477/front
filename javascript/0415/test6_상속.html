@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상속</title>
+    <script src="test6.js"></script>
+    <script>
+        'use strict';
+        console.clear();
+        member = new Member('김말숙', 32, '회사원');
+        console.log(member);
+        member.name = "가브리엘";
+        member.age = -19;
+        member.job = "대학생";
+        console.log(member);
+
+        //상속: extends 부모 필드에는 접근이 안됨??
+        class ChildMember extends Member {}
+
+        let childMember = new ChildMember('하하하',-32,"중학생");
+        console.log(childMember);
+        
+    </script>
+</head>
+<body>
+    <h3>상속 예제</h3>
+</body>
+</html>

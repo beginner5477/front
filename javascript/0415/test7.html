@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test7(오버라이드 테스트)</title>
+    <script>
+        'use strict';
+
+        class Area {
+            constructor(width,height) {
+                this.width = width;
+                this.height = height;
+            }
+            getArea() {
+                return this.width *this.height;
+            }
+        }
+        let area = new Area(30,40);
+        console.log(area);
+        console.log(area.getArea());
+        class ChildArea extends Area {
+
+        }
+        let childArea = new ChildArea(50,60);
+        console.log(childArea);
+        console.log(childArea.getArea());
+        class ChildArea2 extends Area {
+            getArea() {
+                return this.width * this.width * 3.141592;
+            }
+        }
+        let childArea2 = new ChildArea2(10,9999);
+        console.log(childArea2.getArea());
+    </script>
+</head>
+<body>
+    <h6>오버라이드 예제</h6>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test13</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        th {
+            text-align: center;
+            background-color: purple;
+            color: aquamarine;
+        }
+    </style>
+    <script>
+        'use strict';
+        let res;
+        function fCheck() {
+            res = "";
+            for(let i = 0; i < document.getElementsByName("hobby").length; i++)
+            {
+                if(document.getElementsByName("hobby")[i].checked)
+                {
+                    res += document.getElementsByName("hobby")[i].value + "/";
+                }
+                console.log(document.getElementsByName("hobby")[i].checked);
+            }
+            if(res == "")
+            {
+                alert("최소 1개 이상 선택해주세용~");
+                return 0;
+            }
+            res = res.substring(0,res.length-1);
+            res += "<input type='button' value='지우기' onclick='fClear()'/>";
+
+            
+            document.getElementById("demo").innerHTML = "<font color='red'>"+res + "</font>";
+        }
+        function fClear() {
+            for(let i = 0; i < document.getElementsByName("hobby").length; i++)
+            {
+                document.getElementsByName("hobby")[i].checked = false;
+            }
+            res = "";
+            document.getElementById("demo").innerHTML = "<font color='red'>"+res + "</font>";
+        }
+        function allSelector() {
+            for(let i = 0; i < document.getElementsByName("hobby").length; i++)
+            {
+                document.getElementsByName("hobby")[i].checked = true;
+            }
+        }
+        function allReverse() {
+            for(let i = 0; i < document.getElementsByName("hobby").length; i++)
+            {
+                if(document.getElementsByName("hobby")[i].checked) document.getElementsByName("hobby")[i].checked = false;
+                else document.getElementsByName("hobby")[i].checked = true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <name="myForm">
+            <h5 class="m-3">여러개의 값을 처리하기</h5>
+            <input type="button" value="모두선택" onclick="allSelector()"/> &nbsp;
+            <input type="button" value="체크역전" onclick="allReverse()"/> &nbsp;<br/>
+            등산 <input type="checkbox" name="hobby" id="su1" value="등산" /> &nbsp;
+            컴겜 <input type="checkbox" name="hobby" id="su2" value="컴겜" /> &nbsp;
+            콘솔겜 <input type="checkbox" name="hobby" id="su3" value="콘솔겜" /> &nbsp;
+            복싱 <input type="checkbox" name="hobby" id="su4" value="복싱" /> &nbsp;
+            플라잉낚시 <input type="checkbox" name="hobby" id="su5" value="플라잉낚시" /> &nbsp;
+            <input type="button" onclick="fCheck()" class="btn btn-success form-control" value="계산"/>
+    </form>
+    </div>
+    <div id="demo"></div>
+</body>
+</html>
