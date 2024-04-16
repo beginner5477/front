@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>t1_setInterval_setTimeout</title>
+    <script>
+        // setInterval(function() {
+        //     console.log("셋 인터벌 함수 실행중");
+        // },1000);
+        // setInterval(() => {
+        //     console.log("set 인터벌 함수 실행중");
+        // }, 1000);
+
+        setTimeout(() => {
+            console.log("setTimeout함수 수행중");
+        }, 1000);
+    </script>
+</head>
+<body>
+    <h2>setInterval()/setTimeout()</h2>
+    <pre>
+        - 두 함수 모두 Job 스케줄러를 지원한다
+        - 일반적 차이점:
+            setInterval()은 지정된 주기로 특정코드를 계속해서 실행한다. clearInterval()을 만나면 수행 종료
+            setTimeout()은 지정된 시간(밀리초 단위)이 지나면 특정코드를 1회 수행한다. 단, 자신을 호출하면 반복실행가능하다. 
+        - 메모리적인 차원: 두 함수 모두 garbage collector의 대상이 아니다. 즉 메모리에 독립적으로 유지된다. 
+    </pre>
+</body>
+</html>

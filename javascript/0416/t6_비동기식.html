@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        'use strict';
+
+        //동기식 콜백함수
+        function printProgress(print) {
+            console.log("동기식 출력");
+            console.log(print);
+            print();
+            console.log(print());
+        }
+        printProgress(function() {
+            console.log("하이용~");
+        });
+        printProgress(()=> {
+            alert("누구세여?");
+        });
+        console.log("");
+        //비동기식 콜백     
+        console.log("비동기 출발1");
+        setTimeout(() => {console.log("비동기 출발2");}, 1000);
+        console.log("출발3");
+        console.log("");
+
+        //비동기 콜백으로 시간 지연하기
+        function printDelay(print, time) {
+            setTimeout(print,time);
+        }
+
+        printDelay(()=>{console.log("비동기 수행중");},2000);
+        printProgress(()=>{console.log("777");});
+        console.log("");
+    </script>
+</head>
+<body>
+    <h2>동기식 싱크로너스 콜백 / 비동기식 어싱크로너스 콜백</h2>
+</body>
+</html>

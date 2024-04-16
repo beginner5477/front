@@ -16,10 +16,14 @@
         console.log(member);
 
         //상속: extends 부모 필드에는 접근이 안됨??
-        class ChildMember extends Member {}
+        class ChildMember extends Member {
+            
+        }
 
         let childMember = new ChildMember('하하하',-32,"중학생");
+        let childMember2 = new ChildMember();
         console.log(childMember);
+        console.log(childMember2);
         
     </script>
 </head>
