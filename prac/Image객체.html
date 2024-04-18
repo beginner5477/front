@@ -3,29 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이미지 객체 연습하기</title>
-    <script>
-        var srcs = ["../../images/5.gif","../../images/6.png"];
-        var imgs = [];
-        let ck = 0;
-        for(let i=0; i<srcs.length;i++)
-        {
-            imgs[i] = srcs[i];
-        }
-        function change() {
-            ck++;
-            document.getElementById("img").src = srcs[ck];
-            if(ck == (srcs.length)) {
-                ck = 0;
-                document.getElementById("img").src = srcs[ck];
-            }
-        }
-    </script>
+    <title>이미지 객체</title>
 </head>
 <body>
-    <h4>이미지 객체로 이미지 바꾸기</h4>
-    <p>이미지를 클릭하면 다음 이미지를 보여줍니다.</p>
-    <img id="img" style="border: 20px ridge wheat;"
-    src="../../images/5.gif" width="300px" height="300px" onclick="change()"/>
+    
 </body>
 </html>

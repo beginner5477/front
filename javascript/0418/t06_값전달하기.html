@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        'use strict';
+        function IDCheck() {
+            let ID = document.getElementById("mid").value;
+            let url = "t06_아이디체크창.html";
+            window.open(url,"ggg");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h4>윈도우 창 간의 값 전달하기ddd</h4>
+        <h6>이곳은 패런트 윈도우입니다.</h6>
+        <form name="myform" method="get">
+            <div class="mb-3">아이디
+                <input type="text" name ="mid" id="mid" value="dfsf1324" autofocus class="mr-4"/>
+                <input type="button" value="ID중복체크" onclick="IDCheck()" class="btn btn-success"/>
+            </div>
+            <div class="mb-3">비밀번호
+                <input type="password" name ="pwd" id="pwd" value="5313133"/>
+            </div>
+            <div class="mb-3">
+                <input type="button" value="로그인" onclick="fCheck()" class="btn btn-secondary"/>
+                <input type="button" value="다시입력" onclick="location.reload()" class="btn btn-warning"/>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

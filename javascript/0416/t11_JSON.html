@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 연습</title>
+    <script>
+        'use strict';
+        // JSON.stringify(): Object to JSON 즉, JavaScript의 값이나 객체를 JSON문자열로 변환해줌
+        let json = JSON.stringify("true");
+        console.log(json);
+        console.log("");
+
+        json = JSON.stringify(1234);
+        console.log(json);
+        console.log("");
+
+        json = JSON.stringify(['사과','배','qksksk',true,200]);
+        console.log(json);
+        console.log("");
+
+        //자바스크립트에서의 Object
+        const member = {
+            name: '홍길동',
+            age: 24,
+            address: '연옥',
+            color: 'red',
+            gender: true,
+            birthday: new Date(),
+            atom: function() {
+                console.log("성명", member.name);
+            }
+        }
+        console.log(member);
+        console.log(member.name);
+        console.log(member.birthday.getDate());
+        console.log(member.atom());
+        member.atom();
+        
+        // 자바스크립트 객체를 JSON문자열 Format으로 변환하기 
+        json = JSON.stringify(member);
+        console.log(json);
+        console.log("");
+        //JSON 형식은 키와 값을 조정(변경)을 하고자 한다면, 매개변수로 키/값을 받아 처리해야된다.
+        json = JSON.stringify(member, (key,value) => {
+            //키와 값의 처리
+            return key == 'name' ? '사용자' : value;
+        });
+        console.log(json);
+        
+        //JSON.parse(): JSON to Object 즉, JSON형식의 문자열을 JavaScript Object형식으로 변환
+        let text = '{ "회원정보" : [ ' +
+        '{"성":"홍", "이름":"길동"},' +
+        '{"성":"김", "이름":"말숙"},' +
+        '{"성":"이", "이름":"기자"},' +
+        '{"성":"박", "이름":"세리"}' +
+        ']}';
+        const jsObj = JSON.parse(text);
+        console.log(jsObj);
+        console.log(jsObj.회원정보);
+        console.log(jsObj.회원정보[0]);
+        console.log(jsObj.회원정보[1]);
+        console.log(jsObj.회원정보[1].성);
+        console.log("");
+
+        let n1 = "하이";
+        let n2 = "소록";
+        let n3 = 32;
+        console.log(n1+n2+n3);
+        for(let mem in jsObj.회원정보)
+        {
+            console.log(mem);
+        }
+        for(let mem of jsObj.회원정보)
+        {
+            console.log(mem);
+        }
+        for(let mem of jsObj.회원정보)
+        {
+            console.log(mem.성,mem.이름);
+        }
+        console.log("-------------------------------------------------------");
+        
+        console.log(json);
+        let obj = JSON.parse(json);
+        console.log(obj);
+        console.log("");
+        //날짜형식의 자료는 문자로 parse해주기 때문에 파싱시에 날짜형식으로 변환해준다.
+        obj = JSON.parse(json,(key,value)=> {
+            return key == 'birthday' ? new Date(value) : value;
+        });
+        console.log(obj);
+    </script>
+</head>
+<body>
+    <h3>JSON 자료 활용하기</h3>
+    <h4>자료 전달방식: XML, JSON</h4>
+    <pre>
+        JSON: JavaScript Object Notation   => 모바일(웹)에서의 서버와 데이터 전송방식에서 주로 사용
+                                                프로그램의 종류나 플랫폼에 관계없이 사용가능하다 
+                                                처리방식은 Object를 String형식으로 직렬화(serialize)처리해 전송한다
+                                                따라서 다시 사용하고자 한다면 JSON문서형식을 JS Object형식으로 변환하여 사용해야 된다.
+
+        1. JSON 데이터 형식: "Key":"Value"      <== JSON에서는 꼭 ""가 들어간다 예외가 있긴함. 그래도 걍 다 붙이는게 편함
+        2. JSON 객체(중괄호로): {"key":"value"}
+        3. JSON 배열(대괄호로):
+            {
+                "회원정보":[
+                    {"성":"홍", "이름":"길동"},
+                    {"성":"김", "이름":"말숙"},
+                    {"성":"미", "이름":"카엘"},
+                    {"성":"벨", "이름":"제붑"}
+                ]
+            }
+        4. JSON텍스트와 JavaScript 객체 간의  변환: 변환방식 => stringify(), parse()
+            1. JSON.stringify(): 자바스크립트 객체를 JSON형식의 문자열로 변경
+            2. JSON.parse(): JSON형식의 문자열을 Object(자바스크립트 객체) 형식으로 변환
+    </pre>
+</body>
+</html>
