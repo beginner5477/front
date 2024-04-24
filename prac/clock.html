@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        let secondCk = 0;
+        let hhCk = 0;
+        let minuteCk = 0;
+        function start() {
+            setTimeout(start,1/3*1000);
+            let date = new Date();
+            let dd = date.getDate();
+            let mm = date.getMonth();
+            let yy = date.getFullYear();
+            let hh = date.getHours();
+            let minute = date.getMinutes();
+            let second = date.getSeconds();
+            console.log(dd);
+            console.log(mm+1);
+            console.log(yy);
+            console.log(hh);
+            console.log(minute);
+            console.log(second);
+            document.getElementById("demo").innerHTML = `${yy}-${mm}-${dd}\n${hh}:${minute}:${second}`;
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" onclick="start()" value="시작~"/>
+    <div id="demo"></div>
+</body>
+</html>

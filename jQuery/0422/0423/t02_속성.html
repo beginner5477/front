@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t02_속성.html</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    $(() => {
+
+      $("#setBtn").on("click", function(){
+        let email = $('#email').val();
+        // $('#setDemo').text('<b>이메일주소 : '+email+'</b>');
+        $('#setDemo').html('<b>이메일주소 : '+email+'</b>');
+      });
+
+      $("#getBtn").on("click", function(){
+        let email = $('#email').val();
+        let i = 2;
+        // console.log(email);
+        // $('#getDemo').html('<b>이메일주소 : '+email+'</b>');
+        // $('#getDemo').text(functoin(인덱스, 텍스트내용){처리내용 ~~~ return 돌려줄값});
+        $('#getDemo').text(function(){
+          return '이메일 주소 : ' + email + '('+i+')';
+        });
+
+        //만약에 배열로 여러개 넘겨 받으면 여러곳에 한방에 값을? 이렇게 넣을 수 있습니다.
+        $(".ee").text(function(i,text){
+          return i+text;
+        });
+      });
+    });
+    document.getElementById("getDemo");
+  </script>
+  <style>
+    body { margin: 0px;}
+  </style>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <p id="setDemo"></p>
+  <p class="ee">gd1</p>
+  <p class="ee">gd2</p>
+  <p class="ee">gd3</p>
+  <p class="ee">gd4</p>
+  <hr/>
+  <input type="text" id="email" value="atom1234@hanmail.net" class="form-control mb-3"/>
+  <input type="button" value="값넣기" id="setBtn" class="btn btn-success"/>
+  <input type="button" value="값가져오기" id="getBtn" class="btn btn-primary"/>
+  <hr/>
+  <p id="getDemo"></p>
+</div>
+</body>
+</html>

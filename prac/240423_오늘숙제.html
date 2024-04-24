@@ -1,0 +1,70 @@
+<!--
+    다섯 마리의 말 경주시합 게임 만들기
+    그림 gif로 해서 뛰는거 마냥 만들어주기
+    지정된 거리에 먼저 도착한 순서대로 등수를 출력해줌
+    다 들어오고 나서 전광판에 등수 출력해주기 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        'use strict';
+        $(()=>{
+            $("#startBtn").on('click',function(){
+                let ani1 = Math.random()*1000 + 2000;
+                let ani2 = Math.random()*1000 + 2000;
+                let ani3 = Math.random()*1000 + 2000;
+                let res = "";
+                //사실은 마진레프트 주는거보다는 포지션 앱솔루트로 잡아주고 
+                //부모태그 밑의 좌표 설정해주는게 더 좋은 이동 방법임 그거로 만들어보자
+                $("#horse1").animate({
+                    marginLeft: "500px"
+                },ani1,function(){
+                    res += "1번말 도착";
+                });
+                $("#horse2").animate({
+                    marginLeft: "500px"
+                },ani2,function(){
+                    res += "2번말 도착";
+                });
+                $("#horse3").animate({
+                    marginLeft: "500px"
+                },ani3,function(){
+                    res += "3번말 도착";
+                });
+                demo.inn
+            });
+        });
+    </script>
+    <style>
+        #horse1 {
+            /* background-color: green; */
+            color: violet;
+        }
+        #horse2 {
+            /* background-color: yellow; */
+            color: blue;
+        }
+        #horse3 {
+            /* background-color: violet; */
+            color:brown;
+        }
+    </style>
+</head>
+<body>
+    <button id="startBtn">출발</button>
+    <hr/>
+    <div id="horse1">날쌩마</div>
+    <div id="horse2">시로가루</div>
+    <div id="horse3">쿠로가루</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t17_slideDown_Up.html</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    // $(document).ready(function(){
+    //   $("셀렉터").메소드();
+    // });
+
+    //animate({위치},지연시간,callBack함수);
+    $(()=>{
+      $(".aniBtn").on("click", function(){
+        // 하나의 개체에 같은 명령 여러개 조지면 que마냥 순차진행임 즉 기다렸다가
+        // $("#aniBox").animate({width:"toggle"},'fast');
+        $("#aniBox").animate({width:"200px"},'slow');
+        $("#aniBox").animate({height:"200px"},'slow');
+        $("#aniBox2").animate({width:"150px"},'slow');
+        $("#aniBox2").animate({height:"150px"},'slow');
+      });
+    });
+  </script>
+  <style>
+    .container {position: relative;}
+    body {margin: 0px;}
+    div#aniBox {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      position: absolute;
+      left: 100px;
+      top: 100px;
+      font-size: 2rem;
+    }
+    div#aniBox2 {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      position: absolute;
+      left: 300px;
+      top: 300px;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <button class="aniBtn">클릭</button>
+    <hr>
+    <div id="aniBox">The Best</div>
+    <div id="aniBox2">The Best</div>
+  </div>
+</div>
+</body>
+</html>

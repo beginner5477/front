@@ -1,0 +1,46 @@
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    
+        // $(document).ready(function () {
+        
+        //            $('h1:even').css({
+        
+        //                backgroundColor: 'black',
+        
+        //                color: 'red'
+        
+        //            });
+        
+        //        });
+        
+        //filter() 메서드 
+        
+                $(document).ready(function () {
+        
+                    $('h1').filter('.ok').css({
+        
+                        backgroundColor: 'black',
+        
+                        color: 'red'
+        
+                    });
+        
+                });
+        document.getElementById("ok");
+        </script>
+        
+        </head>
+        
+        <body>
+        
+            <h1 class="ok" id="ok">Header-0</h1>
+        
+            <h1 class="ok">Header-1</h1>
+        
+            <h1 class="ok">Header-2</h1>
+        
+            <h1>Header-3</h1>
+        
+        </body>
+</html>
